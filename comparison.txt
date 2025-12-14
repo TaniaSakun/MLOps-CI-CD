@@ -1,0 +1,12 @@
+Fat image:
+- Size: ~1.2GB
+- Layers: 10+
+- Contains build tools and cache
+- Slower to pull and start
+
+Slim image:
+- Size: ~300MB
+- Layers: 6-7
+- Only runtime dependencies
+- Faster to pull and start
+- Ideal for production

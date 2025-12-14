@@ -1,0 +1,21 @@
+# Fat image:
+FROM python:3.9-slim
+
+# System dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy model and code
+WORKDIR /app
+COPY inference.py .
+COPY model.pt .
+COPY imagenet_classes.txt .
+COPY test_images/ ./test_images/
+
+# Install Python packages
+RUN pip install --no-cache-dir torch torchvision pillow
+
+# Run inference
+CMD ["python", "inference.py"]

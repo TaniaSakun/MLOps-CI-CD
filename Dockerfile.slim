@@ -1,0 +1,18 @@
+# Stage 1: build
+FROM python:3.9-slim AS builder
+WORKDIR /app
+COPY inference.py .
+COPY model.pt .
+COPY imagenet_classes.txt .
+COPY test_images/ ./test_images/
+RUN pip install --user --no-cache-dir torch torchvision pillow
+
+# Stage 2: final
+FROM python:3.9-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+COPY --from=builder /app /app
+ENV PATH=/root/.local/bin:$PATH
+
+# Run inference
+CMD ["python", "inference.py"]
