@@ -5,6 +5,7 @@ This repository contains the homework for MLOps CI/CD lessons. It demonstrates h
 ---
 
 ## Project Structure
+```
 lesson-3/
 ├── inference.py # Script for model inference
 ├── export_model.py # Script to export TorchScript model
@@ -16,7 +17,7 @@ lesson-3/
 ├── imagenet_classes.txt # List of ImageNet classes
 ├── comparison.txt # Comparison of fat vs slim images
 └── README.md
-
+```
 
 ---
 
