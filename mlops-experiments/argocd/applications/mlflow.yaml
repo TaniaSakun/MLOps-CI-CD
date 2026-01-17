@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/TaniaSakun/mlops-experiments.git
-    path: mlflow
-    targetRevision: main
+    repoURL: https://github.com/TaniaSakun/MLOps-CI-CD.git
+    targetRevision: lesson-8-9
+    path: mlops-experiments/mlflow
   destination:
     server: https://kubernetes.default.svc
     namespace: mlflow
