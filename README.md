@@ -58,7 +58,7 @@ Accuracy ≈ 0.96
 
 Скріншот інтерфейсу MLflow з результатами експериментів:
 
-(![Lflow UI](<Screenshot 2026-01-17 at 13.12.28.png>))
+![Lflow UI](<Screenshot 2026-01-17 at 13.12.28.png>)
 
 ---
 
