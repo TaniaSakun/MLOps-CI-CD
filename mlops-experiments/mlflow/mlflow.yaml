@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mlflow
-          image: bitnami/mlflow:2.9.2
+          image: bitnami/mlflow:2.10.0-debian-12-r0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
