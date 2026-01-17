@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
 MLFLOW_TRACKING_URI = "http://localhost:5000"
-PUSHGATEWAY_URL = "http://pushgateway.monitoring.svc.cluster.local:9091"
+PUSHGATEWAY_URL = "http://localhost:9091"
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 mlflow.set_experiment("iris-experiment")

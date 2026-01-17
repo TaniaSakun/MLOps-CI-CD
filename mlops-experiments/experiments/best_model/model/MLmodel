@@ -1,4 +1,4 @@
-artifact_path: s3://mlflow-artifacts/1/models/m-b7a9166e0dbd472394cea64a54de9245/artifacts
+artifact_path: s3://mlflow-artifacts/1/models/m-641e021de4154ad5816293fc039607bd/artifacts
 flavors:
   python_function:
     env:
@@ -14,9 +14,9 @@ flavors:
     serialization_format: cloudpickle
     sklearn_version: 1.8.0
 mlflow_version: 3.8.1
-model_id: m-b7a9166e0dbd472394cea64a54de9245
+model_id: m-641e021de4154ad5816293fc039607bd
 model_size_bytes: 823
-model_uuid: m-b7a9166e0dbd472394cea64a54de9245
+model_uuid: m-641e021de4154ad5816293fc039607bd
 prompts: null
-run_id: 00308e5875da44ad980ff25a2f797053
-utc_time_created: '2026-01-17 12:10:02.394231'
+run_id: df8515545b4e49b88a598f63d2de65f1
+utc_time_created: '2026-01-17 13:17:17.729727'
