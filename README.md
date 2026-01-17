@@ -58,7 +58,7 @@ Accuracy ≈ 0.96
 
 Скріншот інтерфейсу MLflow з результатами експериментів:
 
-(![Lflow UI](<Screenshot 2026-01-17 at 14.27.32.png>))
+![Lflow UI](<Screenshot 2026-01-17 at 14.27.32.png>)
 
 ---
 
@@ -68,7 +68,7 @@ Accuracy ≈ 0.96
 
 На скріншоті нижче показано візуалізацію метрик `mlflow_accuracy` та `mlflow_loss` у Grafana для конкретного MLflow run.
 
-![Grafana MLflow metrics](./screenshots/grafana_mlflow_metrics.png)
+![Grafana MLflow metrics](![./screenshots/grafana_mlflow_metrics.png](<Screenshot 2026-01-17 at 14.27.32.png>))
 ## Висновки
 
 У рамках роботи було:
