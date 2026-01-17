@@ -60,7 +60,6 @@ Accuracy ≈ 0.96
 
 ![Lflow UI](<Screenshot 2026-01-17 at 14.27.32.png>)
 
----
 
 - Метрики додатково пушаться в **Prometheus Pushgateway**
 - **Prometheus** збирає метрики з Pushgateway
