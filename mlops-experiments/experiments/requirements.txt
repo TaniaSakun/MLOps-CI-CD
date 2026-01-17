@@ -1,6 +1,0 @@
-mlflow
-scikit-learn
-pandas
-joblib
-prometheus-client
-boto3

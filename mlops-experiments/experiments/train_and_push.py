@@ -47,20 +47,26 @@ for params in params_grid:
 
         # Push metrics to PushGateway
         registry = CollectorRegistry()
-        g_acc = Gauge("mlflow_accuracy", "Accuracy from MLflow run", ["run_id"], registry=registry)
-        g_loss = Gauge("mlflow_loss", "Loss from MLflow run", ["run_id"], registry=registry)
+        g_acc = Gauge(
+            "mlflow_accuracy", "Accuracy from MLflow run", ["run_id"], registry=registry
+        )
+        g_loss = Gauge(
+            "mlflow_loss", "Loss from MLflow run", ["run_id"], registry=registry
+        )
 
         g_acc.labels(run_id=run.info.run_id).set(acc)
         g_loss.labels(run_id=run.info.run_id).set(loss)
 
-        push_to_gateway(PUSHGATEWAY_URL, job="mlflow_training", registry=registry)
+        try:
+            push_to_gateway(PUSHGATEWAY_URL, job="mlflow_training", registry=registry)
+        except Exception as e:
+            print("Pushgateway skipped:", e)
 
         if acc > best_accuracy:
             best_accuracy = acc
             best_run_id = run.info.run_id
             best_model_path = mlflow.artifacts.download_artifacts(
-                run_id=best_run_id,
-                artifact_path="model"
+                run_id=best_run_id, artifact_path="model"
             )
 
 # Save best model locally
