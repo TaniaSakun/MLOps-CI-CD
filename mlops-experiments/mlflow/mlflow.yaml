@@ -14,19 +14,19 @@ spec:
     spec:
       containers:
         - name: mlflow
-          image: bitnami/mlflow:latest
+          image: python:3.10-slim
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
           command:
-            - mlflow
-            - server
-            - --backend-store-uri
-            - postgresql://mlflow:mlflow123@postgres.mlflow.svc.cluster.local:5432/mlflow
-            - --default-artifact-root
-            - s3://mlflow-artifacts
-            - --host
-            - 0.0.0.0
+            - /bin/sh
+            - -c
+            - |
+              pip install mlflow psycopg2-binary boto3 &&
+              mlflow server \
+                --backend-store-uri postgresql://mlflow:mlflow123@postgres.mlflow.svc.cluster.local:5432/mlflow \
+                --default-artifact-root s3://mlflow-artifacts \
+                --host 0.0.0.0
           env:
             - name: AWS_ACCESS_KEY_ID
               value: minioadmin
