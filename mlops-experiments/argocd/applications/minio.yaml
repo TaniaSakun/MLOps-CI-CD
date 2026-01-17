@@ -6,18 +6,32 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: https://charts.min.io/
     chart: minio
-    targetRevision: 14.10.2
+    targetRevision: 5.2.0
     helm:
       values: |
         mode: standalone
-        auth:
-          rootUser: minioadmin
-          rootPassword: minioadmin
-        defaultBuckets: "mlflow-artifacts"
+
+        image:
+          repository: minio/minio
+          tag: RELEASE.2024-10-13T13-34-11Z
+
+        rootUser: minioadmin
+        rootPassword: minioadmin
+
+        defaultBuckets: mlflow-artifacts
+
         persistence:
           enabled: false
+
+        resources:
+          requests:
+            memory: 256Mi
+            cpu: 100m
+          limits:
+            memory: 512Mi
+            cpu: 500m
   destination:
     server: https://kubernetes.default.svc
     namespace: minio
