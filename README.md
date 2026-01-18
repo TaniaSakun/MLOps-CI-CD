@@ -102,8 +102,9 @@ curl -X POST http://localhost:8000/predict \
   "drift": false
 }
 ```
-![POST prediction](<Screenshot 2026-01-17 at 16.24.35.png>)
-![GET metrics](<Screenshot 2026-01-17 at 16.24.07.png>)
+<img width="1433" height="549" alt="Screenshot 2026-01-17 at 16 24 35" src="https://github.com/user-attachments/assets/3b042775-9b53-4f45-8abd-adcc5e5a4b1c" />
+<img width="1440" height="889" alt="Screenshot 2026-01-17 at 16 24 07" src="https://github.com/user-attachments/assets/dbad3445-37ff-4562-a2ee-e67ba7b7fc91" />
+
 ---
 
 ### Як перевірити логування
@@ -149,7 +150,8 @@ Dashboard показує:
 - Requests per minute;
 - Latency;
 - Активність сервісу.
-![Grafana dashboard](<Screenshot 2026-01-18 at 13.13.54.png>)
+<img width="1440" height="631" alt="Screenshot 2026-01-18 at 13 13 54" src="https://github.com/user-attachments/assets/0a55c6cd-1f03-4417-9e37-d1c93bae398e" />
+
 ---
 
 ### Як перевірити retrain-пайплайн
