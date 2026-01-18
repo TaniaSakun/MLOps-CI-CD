@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/TaniaSakun/MLOps-CI-CD.git
-    targetRevision: lesson-10
+    targetRevision: final-project
     path: aiops-quality-project/helm
 
   destination:
