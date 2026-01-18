@@ -1,7 +1,10 @@
 image:
   repository: 8295/aiops-quality
   tag: latest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
+
+env:
+  MODEL_PATH: model/model.pkl
 
 service:
   type: ClusterIP
