@@ -1,0 +1,12 @@
+stages:
+  - retrain
+
+retrain-model:
+  stage: retrain
+  image: python:3.10-slim
+  script:
+    - echo "Starting model retrain"
+    - python model/train.py
+    - echo "Model retrain finished"
+  rules:
+    - when: manual
