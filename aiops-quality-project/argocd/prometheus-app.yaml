@@ -27,7 +27,7 @@ spec:
 
     - repoURL: https://github.com/TaniaSakun/MLOps-CI-CD.git
       targetRevision: final-project
-      path: prometheus
+      path: aiops-quality-project/prometheus
 
   destination:
     server: https://kubernetes.default.svc
