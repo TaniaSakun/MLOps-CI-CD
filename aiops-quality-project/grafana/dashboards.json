@@ -1,0 +1,55 @@
+{
+  "id": null,
+  "title": "AIOps Quality Service",
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Requests per minute",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
+      "targets": [
+        {
+          "expr": "rate(http_requests_total[1m])",
+          "legendFormat": "{{endpoint}}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Request Latency (p95)",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_latency_seconds_bucket[5m])) by (le))",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Drift detected",
+      "gridPos": { "x": 0, "y": 8, "w": 6, "h": 6 },
+      "targets": [
+        {
+          "expr": "drift_detected_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Total predictions",
+      "gridPos": { "x": 6, "y": 8, "w": 6, "h": 6 },
+      "targets": [
+        {
+          "expr": "model_predictions_total",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}
