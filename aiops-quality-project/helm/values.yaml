@@ -1,19 +1,21 @@
+replicaCount: 1
+
 image:
   repository: 8295/aiops-quality
   tag: latest
   pullPolicy: IfNotPresent
 
-env:
-  MODEL_PATH: model/model.pkl
-
 service:
   type: ClusterIP
   port: 8000
 
+env:
+  MODEL_PATH: "model/model.pkl"
+
 resources:
-  requests:
-    cpu: "100m"
-    memory: "128Mi"
   limits:
-    cpu: "500m"
-    memory: "512Mi"
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
